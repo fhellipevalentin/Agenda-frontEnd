@@ -11,6 +11,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContatoComponent } from './contato/contato.component';
 import { ContatoService } from './contato.service';
+import { MatTabsModule } from '@angular/material/tabs'
+import { MatTableModule } from '@angular/material/table'
+import { MatIconModule } from '@angular/material/icon'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { ContatoService } from './contato.service';
     MatToolbarModule,
     MatInputModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule,
+    MatTableModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [
     ContatoService
