@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatCardModule } from '@angular/material/card'
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContatoDetalheComponent } from './contato-detalhe/contato-detalhe.component'
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ContatoDetalheComponent } from './contato-detalhe/contato-detalhe.compo
     MatTableModule,
     MatIconModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [
     ContatoService
