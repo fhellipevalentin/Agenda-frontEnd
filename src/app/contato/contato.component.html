@@ -65,26 +65,31 @@
   <mat-tab>
     <ng-template mat-tab-label>
         <mat-icon>face</mat-icon>
-          Novo
+          Novo Contato
     </ng-template>
     <mat-card class="half-width">
       <mat-card-title></mat-card-title>
       <form [formGroup]="formulario" (ngSubmit)="submit()">
+
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Nome: </mat-label>
           <input formControlName="nome" matInput placeholder="Digite seu nome" />
         </mat-form-field>
-        <div *ngIf="formulario.get('nome')?.errors">
-          <div *ngIf="formulario.get('nome')?.errors?.['required']">Campo Nome é Obrigatório</div>
+        <div class="required" *ngIf="formulario.get('nome')?.errors && !formulario.get('nome')?.pristine">
+          <div *ngIf="formulario.get('nome')?.errors?.['required']">* Campo Nome é obrigatório</div>
         </div>
+        
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Email: </mat-label>
           <input formControlName="email" matInput placeholder="Digite seu email" />
         </mat-form-field>
-        <div *ngIf="formulario.get('email')?.errors">
-          <div *ngIf="formulario.get('email')?.errors?.['required']">Campo Email é Obrigatório</div>
-          <div *ngIf="formulario.get('email')?.errors?.['email']">Email Inválido</div>
+        <div class="required" *ngIf="formulario.get('email')?.errors">
+          <div *ngIf="formulario.get('email')?.errors?.['required'] 
+                      && !formulario.get('email')?.pristine">* Campo Email é obrigatório</div>
+          <div *ngIf="formulario.get('email')?.errors?.['email'] 
+                      && !formulario.get('email')?.pristine"> * Email Inválido</div>
         </div>
+
           <button mat-raised-button color="primary" >Adicionar</button>
       </form>
     </mat-card>
